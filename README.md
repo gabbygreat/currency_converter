@@ -7,27 +7,40 @@ The app is built to be **efficient, responsive, and cache-friendly**, while also
 
 ## ✨ Features
 
-* 🔄 **Currency Conversion**
+- 🔄 **Currency Conversion**
 
-  * Supports conversion between multiple currencies.
-  * Base currency is **USD** (all conversions are calculated relative to USD).
-  * If a user selects another currency, the app recalculates rates using USD as the pivot.
+  - Supports conversion between multiple currencies.
+  - Base currency is **USD** (all conversions are calculated relative to USD).
+  - If a user selects another currency, the app recalculates rates using USD as the pivot.
 
-* 📡 **API Integration**
+- 📡 **API Integration**
 
-  * Fetches supported currencies and conversion rates from the currency API.
-  * Flags were not included since they require a paid API plan.
+  - Fetches supported currencies and conversion rates from the currency API.
+  - Flags were not included since they require a paid API plan.
 
-* ⚡ **Caching**
+- ⚡ **Caching**
 
-  * Conversion rates are fetched **once** and cached for **3 days**.
-  * Reduces unnecessary API calls and ensures faster performance.
-  * After 3 days, the cache invalidates and fresh rates are fetched.
+  - Conversion rates are fetched **once** and cached for **3 days**.
+  - Reduces unnecessary API calls and ensures faster performance.
+  - After 3 days, the cache invalidates and fresh rates are fetched.
 
-* 🎨 **Error Handling**
+- 🎨 **Error Handling**
 
-  * Animated error states provide clear, user-friendly feedback.
-  * Handles failed requests, missing data, or connectivity issues gracefully.
+  - Animated error states provide clear, user-friendly feedback.
+  - Handles failed requests, missing data, or connectivity issues gracefully.
+
+---
+
+> **ℹ️ Note**  
+> The `config/config.json` file was intentionally committed to version control for reference purposes.
+>
+> To run the project correctly, please provide your own configuration values at runtime using **`--dart-define`**.
+>
+> Example:
+>
+> ```bash
+> flutter run --dart-define=API_KEY=your_api_key_here
+> ```
 
 ---
 
@@ -35,20 +48,20 @@ The app is built to be **efficient, responsive, and cache-friendly**, while also
 
 1. **Base Currency Strategy**
 
-   * All conversion rates are stored relative to USD.
-   * For non-USD conversions, the app recalculates using the cached USD rates.
-   * Example: To convert `EUR → GBP`, the app computes `EUR → USD → GBP`.
+   - All conversion rates are stored relative to USD.
+   - For non-USD conversions, the app recalculates using the cached USD rates.
+   - Example: To convert `EUR → GBP`, the app computes `EUR → USD → GBP`.
 
 2. **Caching Implementation**
 
-   * Data is cached locally after the first successful API call.
-   * Cache expiry is set to **3 days**.
-   * On expiry, the cache is cleared and replaced with fresh data from the API.
+   - Data is cached locally after the first successful API call.
+   - Cache expiry is set to **3 days**.
+   - On expiry, the cache is cleared and replaced with fresh data from the API.
 
 3. **Error States & Animations**
 
-   * Error messages are not static — they use subtle animations to improve UX.
-   * Ensures users know when something went wrong and how to retry.
+   - Error messages are not static — they use subtle animations to improve UX.
+   - Ensures users know when something went wrong and how to retry.
 
 ---
 
