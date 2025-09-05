@@ -32,15 +32,17 @@ The app is built to be **efficient, responsive, and cache-friendly**, while also
 ---
 
 > **ℹ️ Note**  
-> The `config/config.json` file was intentionally committed to version control for reference purposes.
->
-> To run the project correctly, please provide your own configuration values at runtime using **`--dart-define`**.
->
+> The `config/config.json` file was intentionally committed to version control for reference purposes.  
+> 
+> To run the project properly, you need to pass configuration values at runtime using **`--dart-define`**.  
+> 
 > Example:
->
 > ```bash
-> flutter run --dart-define=API_KEY=your_api_key_here
+> flutter run \
+>   --dart-define=API_KEY=your_api_key_here \
+>   --dart-define=BASE_URL=https://api.example.com
 > ```
+
 
 ---
 
